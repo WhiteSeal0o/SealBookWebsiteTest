@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css?family=Playball|Righteous|Roboto:900|Lobster");
+
+*,*::before,*::after{
+	box-sizing: border-box;
+}
+
+body {
+	overflow-x: hidden;
+	margin: 0;
+  text-rendering: optimizeLegibility;
+  background: #111;
+}
+
+/* Header */
+.header {
+	position: relative;
+	margin: 0;
+  min-height: 70vh;
+	width: 100vw;
+	z-index: 1000;
+}
+
+.title-side {
+  position: relative;
+  font-family: "Playball", serif;
+  /* border: 1px solid red; */
+}
+
+.title-side h3 {
+  position: absolute;
+  top: -12vw;
+  left: 48%;
+  transform: translateX(-50%);
+  font-size: 5vw;
+  color: palevioletred;
+}
+
+.header .title-side h1 {
+  font-size: 12vw;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 17%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  cursor: cell;
+}
+
+.header .title-box {
+  position: absolute;
+  top: 50%;
+  background: #111;
+  left:50%;
+  transform: translateX(-50%) translateY(-50%);
+  height: 42%;
+  width: 90vw;
+  overflow: hidden;
+  box-shadow: 0 12px 17px #010101, 0 -1px 7px #010101;
+}
+
+.header .title-box h1 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-30%);
+  color: white;
+  margin: 0;
+}
+
+
+/* Top nav */
+.nav {
+	position: fixed;
+	width: 95vw;
+	display: flex;
+	justify-content: space-between;
+	left: 50%;
+  top: 2vw;
+  height: 0;
+	transform: translateX(-50%);
+	z-index: 2000;
+}
+
+.top-nav {
+	font-size: 3vw;
+	text-decoration: none;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+}
+
+.top-nav >* {
+	transition: transform .25s, opacity .25s;
+}
+.top-nav >*:hover {
+	transform: scale(1) !important;
+}
+.top-nav.mini >* {
+  transform: scale(0.7) translateY(-50%);
+  opacity: 0.8;
+}
+
+.top-nav.home {
+	order: -1;
+	font-family: 'Lobster', cursive;
+}
+
+
+/*========================================================
+======================== GRID LAYOUT =====================
+=========================================================*/
+.grid-container {
+  position: relative;
+}
+
+.grid-layout {
+  display: grid;
+  grid-gap: 20px;
+  /* background: #111; */
+  /* height: 200vw; */
+  width: 80vw;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  /*grid-auto-columns: repeat(10, 1fr);*/
+  grid-auto-rows: calc(calc(200vw/40) - 20px);
+  grid-auto-flow: dense;
+}
+
+.grid-layout .author {
+  color: white;
+  box-shadow: 0 7px 7px #000;
+  position: relative;
+  font-size: 1.7vw;
+  transition: all .3s;
+}
+.grid-layout .author.blur {
+  box-shadow: 0 0 0 #000;
+  transform: scale(0.95);
+}
+
+/* Grid-content */
+/* .grid-layout .author img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 150%;  
+} */
+.grid-layout .author img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; 
+  transition: all .3s;
+}
+.grid-layout .author.blur img {
+  filter: blur(4px) brightness(20%); 
+}
+
+/* Overlay */
+.grid-layout .author .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20%;
+  text-align: center;
+  background: rgba(17, 17, 17, 0);
+  color: rgba(255, 255, 255, 0);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Playball", sans-serif;
+  transition: background .5s, color .5s;
+}
+.grid-layout .author:not(.blur):hover .overlay {
+  background: rgba(17, 17, 17, 0.8);
+  color: rgba(255, 255, 255, 1);
+}
+.grid-layout .author.blur:hover .overlay {
+  cursor: default;
+}
+
+/* Layout */
+.grid-layout .author:nth-of-type(8n+1) {
+  grid-column: 1/ span 2;
+  grid-row:  span 3;
+}
+.grid-layout .author:nth-of-type(8n+2) {
+  grid-column: 3/ span 4;
+  grid-row:  span 4;
+  font-size: 2.1vw;
+}
+.grid-layout .author:nth-of-type(8n+3) {
+  grid-column: 7/ span 2;
+  grid-row:  span 3;
+}
+.grid-layout .author:nth-of-type(8n+4) {
+  grid-column: 9/ span 2;
+  grid-row: span 3;
+}
+.grid-layout .author:nth-of-type(8n+5) {
+  grid-column: 1/ span 2;
+  grid-row: span 4;
+}
+.grid-layout .author:nth-of-type(8n+6) {
+  grid-column: 3/ span 2;
+  grid-row: span 3;
+}
+.grid-layout .author:nth-of-type(8n+7) {
+  grid-column: 5/ span 2;
+  grid-row: span 3;
+}
+.grid-layout .author:nth-of-type(8n) {
+  grid-column: 7/ span 4;
+  grid-row: span 5;
+  font-size: 2.1vw;
+}
+
+
+/*====================== Alpha ===================================
+================================================================*/
+.alpha {
+  display: flex;
+  color: #fff;
+  font-family: "Righteous", sans-serif;
+  font-size: 2vw;
+  justify-content: space-around;
+  width: 80vw;
+  margin: 0 auto 7vw;
+}
+
+.alpha span {
+  cursor: pointer;
+}

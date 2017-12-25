@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css?family=Playball|Text+Me+One|Tangerine:700|Dancing+Script|Ubuntu|EB Garamond|Dosis");
+
+*,*::before,*::after{
+	box-sizing: border-box;
+}
+
+body {
+	overflow-x: hidden;
+	margin: 0;
+  text-rendering: optimizeLegibility;
+  background: #111;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Header */
+.header  h1{
+  position: relative; 
+  color: #fff;
+  font-size: 12vw;
+  font-family: "Tangerine", sans-serif;
+  margin-top: 10vw;
+  display: flex;
+  justify-content: center;
+}
+
+/* Back button */
+.back {
+  position: fixed;
+  bottom: 7%;
+  left: 0;
+  color: #111;
+  background: #fff;
+  height: 10vw;
+  width: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  font-family: "Dancing Script", serif;
+  font-size: 2.1vw;
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition: all .7s;
+  transform: translateX(-50%)  rotateZ(-90deg) ;
+}
+.back:hover {
+  border: 1px solid rgba(255, 255, 255, 1);
+  color: #fff;
+  background: #111;
+  transform: translateX(0) rotateZ(0) ;
+}
+
+/* Container */
+.info-container {
+  color: #fff;
+  width: 80vw;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+          "img img year year"
+          "img img . ."
+          "img img . ."
+          "img img story story"
+          "img img story story"
+          "img img story story"
+}
+
+.info-container .img{
+  grid-area: img;
+}
+.info-container .img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.info-container .info {
+  display: contents;
+  grid-column: span 2;
+}
+.info-container .info > * {
+  margin: 0 10%;
+  font-family: "Tangerine", serif;
+  font-size: 1.9vw;
+}
+.info-container .info .story {
+  grid-area: story;
+  font-family: "Dancing Script", serif;
+  line-height: 2.7vw;
+  align-self: flex-end;
+}
+.info-container .info .year {
+  grid-area: year;
+  font-size: 7vw;
+}
+
+
+/* Books */
+h3 {
+  display: block;
+  margin: 12% 10% 5%;
+  color: #fff;
+  font-family: "Text Me One", serif;
+  font-size: 2.7vw;
+}
+
+.books {
+  margin: 0 10%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.book {
+  cursor: pointer;
+  flex: 0 0 20%;
+  margin: 25px 2.5%;
+  box-shadow: 4px 7px 12px #010101;
+  transition: filter .7s, transform .7s;
+  filter: grayscale(90%);
+}
+.book:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+.book img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/*============================================================================
+============================== Product Detail ===================================
+===========================================================================*/
+.product-popup {
+  z-index: 9999;
+}
+
+.product-detail {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: fixed;
+  top: 50%;
+  left: 50.5%;
+  transition: all .7s ease;
+  transform: translate(-50%,-50%) scale(0);
+  background: #fff;
+  width: 90vw;
+  max-height: 80vh;
+  overflow-x: hidden;
+  z-index: 1000;
+  overflow-y: scroll;
+}
+.product-detail.popup {
+  transform: translate(-50%,-50%) scale(1);
+  box-shadow: 0 21px 21px #010101;
+}
+
+.product-detail .img {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  box-shadow: 4px 0 7px rgba(34, 34, 34, 0.7);
+  overflow: hidden;
+}
+.product-detail .img img {
+  min-width: 100%;
+}
+
+.product-detail .content {
+  flex-basis: 50%;
+  padding: 2% 5% 7% 5%;
+  display: flex;
+  flex-flow: row wrap;
+  font-family: "Ubuntu", cursive;
+  color: #222;
+  order: 1;
+}
+
+.product-detail .content .name {
+	margin-left: 1vw;
+	
+  font-size: 2vw;
+  width: 100%;
+  font-weight: 800;
+}
+
+.product-detail .content .author {
+	width: 100%;
+  margin-left: 1vw;
+  color: #222;
+  font-size: 0.75em;
+  text-decoration: none;
+}
+
+.product-detail .content .intro p {
+  /* margin-top: 50% !important; */
+  font-family: "EB Garamond", cursive;
+  font-size: 1.7vw;
+}
+
+.product-detail .btn {
+  /* position: absolute; */
+  /* bottom: 10%;
+  left: 60%; */
+  /* border: 10px 0; */
+  transition: transfom .5s ease;
+  /* transform: translateX(-50%) translateY(-50%); */
+  height: 5vw;
+  width: 60%;
+  display: flex;
+  font-family: "Dosis", cursive;
+  font-weight: bolder;
+  box-shadow: 4px 4px 7px rgba(34, 34, 34, 0.5);
+  font-size: 1.2vw;
+}
+
+.product-detail .btn * {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: all .5s ease;
+}
+
+.product-detail .btn .cart {
+  color: #222;
+  background-color: #fff;
+}
+
+.product-detail .btn .price {
+  color: #fff;
+  background-color: #222;
+}
+
+.product-detail .btn .bg,
+.product-detail .btn span {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.product-detail .btn .cart .bg {
+  transform: translateX(100%);
+  background-color: #222;
+}
+
+.product-detail .btn .price .bg {
+  transform: translateX(-100%);
+  background-color: #fff;
+}
+
+.product-detail .btn.reverse .bg,
+.product-detail .btn.reverse span  {
+  transform: translateX(0);
+  opacity: 1 !important;
+}
+
+.product-detail .btn .cart span {
+  opacity: 0;
+  color: #fff;
+}
+
+.product-detail .btn .price span {
+  opacity: 0;
+  color: #222;
+}
