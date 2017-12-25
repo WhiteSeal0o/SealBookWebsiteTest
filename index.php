@@ -17,7 +17,7 @@
 <body onscroll="myFunction()">
 	<header class="v-header">
 
-		<video id="bg--position" autoplay poster="backgound/pre-home-background.jpg" playsinline loop>
+		<video id="bg--position" autoplay poster="background/pre-home-background.jpg" playsinline loop>
 			<source src="background/TheJoyofBooks.mp4" type="video/mp4">
 		</video>
 		<div class="header-overlay"></div>

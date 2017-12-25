@@ -35,10 +35,26 @@ $(document).ready(function () {
   }
 
   /****************** ALPHABET FILTER ***************************/
+  // $(".alpha span").click(function () {
+  //   var url = window.location.pathname;
+  //   url += "#" + $(this)[0].innerHTML;
+  //   window.location.replace(url);
+  // });
+
   $(".alpha span").click(function () {
-    var url = window.location.pathname;
-    url += "#" + $(this)[0].innerHTML;
-    window.location.replace(url);
+    var authors = document.querySelectorAll(".grid-layout .author");
+    var findDigit = $(this)[0].innerHTML;
+    // console.log(authors);
+    authors.forEach(function (author) {
+      var firstDigit = Array.from(author.lastChild.innerText)[0];
+      if (firstDigit.toUpperCase() === findDigit) {
+        $(author).removeClass("blur");
+      } else {
+        $(author).addClass("blur");
+      }
+      if (findDigit === "All") $(author).removeClass("blur");
+      // console.log(author.attributes["data"].value);
+    })
   });
 
   /************************* Popup Product ******************************/

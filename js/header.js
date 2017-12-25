@@ -80,7 +80,7 @@ $(".filter-btn span").click(function () {
   $(".filter-form").toggleClass("reveal");
   $(".products-wrapper").toggleClass("down");
   if(paginationMove == false){
-    $("#firstPagination").css('transform', 'translateY(300px)');
+    $("#firstPagination").css('transform', 'translateY(200px)');
     paginationMove = true;
   }else{
     $("#firstPagination").css('transform', 'translateY(0)');

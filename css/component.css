@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative:700|Cormorant+Garamond:500i,700|Dosis:200,600|EB+Garamond:400i|Josefin+Slab|Montserrat|Ubuntu|Lobster');
 
 #firstPagination{
-	transition: transform .7s linear;
+	transition: transform .7s ease-out;
 }
 .searchSelectForm{
 	width: 100%;
@@ -377,14 +377,14 @@ body {
 .products-wrapper {
 	display: flex;
 	justify-content: center;
-	transition: transform .7s linear;
+	transition: transform .7s ease-out;
 }
 .products-wrapper.down {
-	transform: translateY(300px);
+	transform: translateY(200px);
 }
 
 .products-layout {
-	/* height: 300vw; */
+	height: 370vw;
 	width: 98vw;
 	margin-top: 5vw;
 	background: #fff;
@@ -577,7 +577,7 @@ body {
 .product-detail .content .name {
 	margin-left: 1vw;
 	
-  font-size: 5vw;
+  font-size: 4vw;
   width: 100%;
   font-weight: 800;
 }
@@ -585,9 +585,10 @@ body {
 .product-detail .content .author {
 	width: 100%;
   margin-left: 1vw;
-  color: darkblue;
+	color: palevioletred;
+	margin-bottom: 2vw;
   /* font-size: 0.75em; */
-  /* text-decoration: none; */
+  text-decoration: none;
 }
 
 .product-detail table{

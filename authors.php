@@ -13,14 +13,14 @@
     $firstChar = "A";
     $lastChar = "";
     while(($row = mysqli_fetch_array($result)) != null){
-        if($firstChar == "A" && $lastChar == ""){
-          $lastChar = $firstChar;
-          $display .= "<a name='" .$firstChar ."'></a>";
-        }
-        if($firstChar != strtoupper(substr($row['authorname'], 0, 1))){
-          $firstChar = chr(ord(strtoupper(substr($row['authorname'], 0, 1))));
-          $display .= "<a name='" .$firstChar ."'></a>";
-        }
+        // if($firstChar == "A" && $lastChar == ""){
+        //   $lastChar = $firstChar;
+        //   $display .= "<a name='" .$firstChar ."'></a>";
+        // }
+        // if($firstChar != strtoupper(substr($row['authorname'], 0, 1))){
+        //   $firstChar = chr(ord(strtoupper(substr($row['authorname'], 0, 1))));
+        //   $display .= "<a name='" .$firstChar ."'></a>";
+        // }
        
         $display .= "<div class='author' data='abc'>";
         $display .= '<img src="data:image/jpeg;base64,' .base64_encode($row["avatar"]) .'" alt="' .$row["authorname"] .'"/>';

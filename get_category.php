@@ -4,6 +4,7 @@
 
     function get_category(){
         $link = mysqli_connect(HOST, USERNAME, PASSWORD, DBNAME) or die("Cannot connect to database");
+        mysqli_set_charset($link,"utf8");
         $query = "select categoryname from category";
         $result = mysqli_query($link, $query);
         $row = mysqli_fetch_array($result);
