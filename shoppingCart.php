@@ -20,6 +20,9 @@
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/component.css" />
   <style type="text/css">
+		body {
+			overflow: scroll;
+		}
   	th{
   		color: #004400;
   		font-size: 20px;
